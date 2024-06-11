@@ -4,8 +4,9 @@ import android.content.Context
 import com.mrtnmrls.gitcommandscompose.domain.GitCommand
 import com.mrtnmrls.gitcommandscompose.domain.GitSubCommand
 import org.json.JSONObject
+import javax.inject.Inject
 
-class LocalDataSource(private val context: Context) {
+class LocalDataSource @Inject constructor(private val context: Context) {
 
     fun loadFromJson(): String {
         return context.assets.open("git-commands.json").bufferedReader().use {
